@@ -1,8 +1,8 @@
 package other.polymorphism.computer;
 
 public class Monoblock extends Computer {
-    public Monoblock() {
-
+    public Monoblock(String name) {
+      super (name);
     }
     @Override
     public void calculation() {

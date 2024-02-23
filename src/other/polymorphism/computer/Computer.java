@@ -3,7 +3,7 @@ package other.polymorphism.computer;
 public class Computer {
     private String name;
 
-    public Computer () {
+    public Computer (String name) {
         this.name = name;
     }
 
