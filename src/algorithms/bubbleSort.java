@@ -3,23 +3,19 @@ package algorithms;
 import java.util.Arrays;
 
 public class bubbleSort {
-
     public static void main(String[] args) {
-        int [] mas = {1,3,7,2,8,5,0,9};
-        bubbleSort(mas);
-System.out.println(Arrays.toString(mas));
-
+        int arr[] = {1,0,5,3,7,8,10};
+        bubbleSort(arr);
+        System.out.println(Arrays.toString(arr));
     }
-    public static void bubbleSort(int mas[]) {
-
-        for( int i = 0; i < mas.length; i ++) {
-            for (int j = 0; j < (mas.length - 1); j++) {
-                if (mas[j] > mas[j + 1]) {
-                    mas[j] = mas[j] + mas[j + 1];
-                    mas[j + 1] = mas[j] - mas [j + 1];
-                    mas[j] = mas[j] - mas[j+1];
+    public static void bubbleSort(int arr[]) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < (arr.length - 1); j++ ) {
+                if (arr[j] > arr[j + 1]) {
+                    arr[j] = arr[j] + arr[j + 1] - (arr[j + 1] = arr[j]);
                 }
             }
         }
     }
 }
+
