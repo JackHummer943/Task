@@ -1,19 +1,29 @@
 package algorithms;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class bubbleSort {
     public static void main(String[] args) {
-        int arr[] = {1,0,5,3,7,8,10};
-        bubbleSort(arr);
-        System.out.println(Arrays.toString(arr));
+        int [] mas = {2,1,4,3,6,5};
+        bubbleSort(mas);
+        System.out.println(Arrays.toString(mas));
     }
-    public static void bubbleSort(int arr[]) {
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < (arr.length - 1); j++ ) {
-                if (arr[j] > arr[j + 1]) {
-                    arr[j] = arr[j] + arr[j + 1] - (arr[j + 1] = arr[j]);
+    public static void bubbleSort(int mas[]) {
+        for (int i = 0; i < (mas.length - 1); i++) {
+            System.out.println("============Внешняя итерация:" + Arrays.toString(mas) + i);
+            int flag = 0;
+            for (int j = 0; j < (mas.length - 1) - i; j++) {
+                System.out.println("Внутенняя итерация:" + Arrays.toString(mas) + j);
+                if (mas[j] > mas[j + 1]) {
+                    mas[j] = mas[j] + mas[j + 1];
+                    mas[j + 1] = mas[j] - mas[j + 1];
+                    mas[j] = mas[j] - mas[j + 1];
+                    flag = 1;
                 }
+            }
+            if (flag == 0) {
+                break;
             }
         }
     }
