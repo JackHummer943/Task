@@ -11,19 +11,12 @@ public class bubbleSort {
     }
     public static void bubbleSort(int mas[]) {
         for (int i = 0; i < (mas.length - 1); i++) {
-            System.out.println("============Внешняя итерация:" + Arrays.toString(mas) + i);
-            int flag = 0;
             for (int j = 0; j < (mas.length - 1) - i; j++) {
-                System.out.println("Внутенняя итерация:" + Arrays.toString(mas) + j);
                 if (mas[j] > mas[j + 1]) {
-                    mas[j] = mas[j] + mas[j + 1];
-                    mas[j + 1] = mas[j] - mas[j + 1];
-                    mas[j] = mas[j] - mas[j + 1];
-                    flag = 1;
+                    mas[j] = mas[j] * mas[j + 1];
+                    mas[j + 1] = mas[j] / mas[j + 1];
+                    mas[j] = mas[j] / mas[j + 1];
                 }
-            }
-            if (flag == 0) {
-                break;
             }
         }
     }
