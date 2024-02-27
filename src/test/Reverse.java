@@ -19,6 +19,7 @@ public class Reverse {
     }
 
        reverse(list.subList(1, list.size())).add(list.get(0));
+        list.remove(0);
        return list;
    }
 }
