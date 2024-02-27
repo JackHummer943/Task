@@ -1,40 +1,36 @@
-import java.util.Arrays;
+package algorithms;
 
+import java.util.Arrays;
 public class MinMaxSort {
     public static void main(String[] args) {
-        int [] arr = {4,8,0,1,2,5,7};
-        MinMaxSort(arr);
-        System.out.println(Arrays.toString(arr));
-    }
-    public static void MinMaxSort(int[] arr){
-        int start, end, step, min, max, min_index, max_index, temp;
-        for (start = 0, end = arr.length - 1; start < end; start++, end--) {
-            min = max = arr[start];
+        int[] mas = {2,3,1,5,0,-1,10,7,5};
+
+        int start, end, step, valMin, valMax, min_index, max_index, temp;
+        for (start = 0, end = mas.length - 1; start < end; start++, end--) {
+            valMin = valMax = mas[start];
             min_index = max_index = start;
-            for (step=start; step <= end; step++) {
-                if (arr[step] > max) {
-                    max = arr[step];
+            for (step = start; step<=end; step++) {
+                if (mas[step] > valMax) {
+                    valMax = mas[step];
                     max_index = step;
-                }
-                else if (arr[step] < min){
-                    min = arr[step];
+                } else if (mas[step] < valMin) {
+                    valMin = mas[step];
                     min_index = step;
                 }
             }
-            temp = arr[start];
-            arr[start] = arr[min_index];
-            arr[min_index] = temp;
-            if (arr[min_index] == max) {
-                temp = arr[end];
-                arr[end] = arr[min_index];
-                arr[min_index] = temp;
-            }
-            else {
-                temp = arr[end];
-                arr[end] = arr[max_index];
-                arr[max_index] = temp;
+            temp = mas[start];
+            mas[start] = mas[min_index];
+            mas[min_index] = temp;
+            if(mas[min_index] == valMax) {
+                temp = mas[end];
+                mas[end] = mas[min_index];
+                mas[min_index] = temp;
+            } else {
+                temp = mas[end];
+                mas[end] = mas[max_index];
+                mas[max_index] = temp;
             }
         }
+        System.out.println(Arrays.toString(mas));
     }
-
 }
