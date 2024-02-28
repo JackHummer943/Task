@@ -3,34 +3,37 @@ package algorithms;
 import java.util.Arrays;
 public class MinMaxSort {
     public static void main(String[] args) {
-        int[] mas = {2,3,1,5,0,-1,10,7,5};
-
-        int start, end, step, valMin, valMax, min_index, max_index, temp;
-        for (start = 0, end = mas.length - 1; start < end; start++, end--) {
-            valMin = valMax = mas[start];
-            min_index = max_index = start;
-            for (step = start; step<=end; step++) {
-                if (mas[step] > valMax) {
-                    valMax = mas[step];
-                    max_index = step;
-                } else if (mas[step] < valMin) {
-                    valMin = mas[step];
-                    min_index = step;
-                }
-            }
-            temp = mas[start];
-            mas[start] = mas[min_index];
-            mas[min_index] = temp;
-            if(mas[min_index] == valMax) {
-                temp = mas[end];
-                mas[end] = mas[min_index];
-                mas[min_index] = temp;
-            } else {
-                temp = mas[end];
-                mas[end] = mas[max_index];
-                mas[max_index] = temp;
-            }
-        }
-        System.out.println(Arrays.toString(mas));
+        int arr[] = {9,9,3,2,1,4,0,-1,11,99,5};
+        MinMaxSort(arr);
+        System.out.println(Arrays.toString(arr));
     }
-}
+    public static void MinMaxSort (int[] arr){
+        int start, end, step, maxVal, minVal, min_index, max_index, timeVal;
+        for (start=0, end = (arr.length-1); start < end; start++, end--) {
+             minVal = maxVal = arr[start];
+             min_index = max_index = start;
+for (step = start; step <= end; step++) {
+
+    if (arr[step] > maxVal) {
+        maxVal = arr[step];
+        max_index = step;
+    } else if ( minVal > arr[step] ) {
+        minVal = arr[step];
+        min_index = step;
+    }
+        }
+        timeVal = arr[start];
+        arr[start] = arr[min_index];
+        arr[min_index] = timeVal;
+        if(arr[min_index] == maxVal) {
+            timeVal = arr[end];
+            arr[end] = arr[min_index];
+            arr[min_index] = timeVal;
+        }
+        else {
+            timeVal = arr[end];
+            arr[end] = arr[max_index];
+            arr[max_index] = timeVal;
+        }
+    }
+}}
