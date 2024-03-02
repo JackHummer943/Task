@@ -1,15 +1,18 @@
 package test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Reverse {
-    public List reverse(List list) {
-        if (list.size() == 0) {
-            return list;
+    List <Integer> list = new ArrayList<>();
+    public List <Integer> reverse(List  <Integer> inputList) {
+        if (inputList.size() == 0) {
+            return inputList;
         }
 
-        list.add(0, list.remove(list.size() - 1));
-        reverse(list.subList(1, list.size()));
+       reverse (inputList.subList(1, inputList.size()));
+        list.add(inputList.get(0));
         return list;
     }
 }
+
