@@ -12,7 +12,9 @@ public class Main {
     alist.add(1);
     alist.add(2);
     alist.add(3);
-    List revList = rev.reverse(alist);
+    alist.add(4);
+    alist.add(5);
+    List revList = rev.revInt(alist);
     System.out.println(revList.toString());
 
     }
